@@ -18,7 +18,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from gensim import models
 from nltk.stem.porter import PorterStemmer
 import spacy
-import docx
 import os
 import numpy as np
 import pandas as pd
@@ -29,7 +28,7 @@ from sklearn import preprocessing
 import math
 from sklearn.model_selection import train_test_split
 from collections import Counter
-import matplotlib.pyplot as plt
+
 
 nlp = spacy.load('en_core_web_md')
 nltk.download('stopwords')
@@ -59,7 +58,6 @@ def get_vocab(posts):
     full = full.lower()
     Vocab = re.findall(r"[A-Za-z]+|\S", full)
     V = Counter(Vocab)
-    print("Histogram of ")
     return V    
     
 def get_missing(df, percent):
