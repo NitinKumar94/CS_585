@@ -23,7 +23,7 @@ class PostData(Dataset):
                 on a sample.
         """
         self.data = pd.read_csv(csv_file, header=0, index_col=False)
-        self.data = self.data.head(100)
+        self.data = self.data.head(100000)
         self.transform = transform
 
     def __len__(self):
